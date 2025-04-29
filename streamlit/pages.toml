@@ -1,0 +1,14 @@
+[[pages]]
+path = "pages/business_problem.py"
+name = "Problema de Negócio"
+icon = "📊"
+
+[[pages]]
+path = "pages/objectives.py"
+name = "Objetivo"
+icon = "🎯"
+
+[[pages]]
+path = "pages/solution.py"
+name = "Solução Proposta"
+icon = "📈"
