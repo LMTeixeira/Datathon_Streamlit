@@ -1,0 +1,9 @@
+streamlit==1.42.0
+st-pages==1.0.1
+pandas==2.2.3
+numpy==2.1.0
+plotly==6.0.0
+statsmodels==0.14.4
+scikit-learn==1.6.1
+statsforecast==2.0.0
+prophet==1.1.5

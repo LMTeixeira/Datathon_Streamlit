@@ -4,7 +4,7 @@ name = "Problema de Negócio"
 icon = "📊"
 
 [[pages]]
-path = "pages/objectives.py"
+path = "pages/objective.py"
 name = "Objetivo"
 icon = "🎯"
 
@@ -12,3 +12,8 @@ icon = "🎯"
 path = "pages/solution.py"
 name = "Solução Proposta"
 icon = "📈"
+
+[[pages]]
+path = "pages/match_candidates1.py"
+name = "Agente IA de Seleção de Candidatos"
+icon = "🔍"

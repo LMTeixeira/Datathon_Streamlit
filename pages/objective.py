@@ -6,7 +6,7 @@ st.markdown(
         O objetivo é desenvolver soluções criativas e viáveis usando IA para melhorar
         o processo de recrutamento, tais como:
 
-        . Agentes de inteligencia aartificial para recrutamento;
+        . Agentes de inteligencia artificial para recrutamento;
 
         . Otimização de entrevistas com inteligencia artificial;
 
