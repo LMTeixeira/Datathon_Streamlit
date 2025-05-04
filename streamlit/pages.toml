@@ -21,4 +21,4 @@ icon = "🔍"
 [[pages]]
 path = "pages/challenges.py"
 name = "Desafios e oportunidade de melhoria"
-icon = "🔍"
+icon = "💡"

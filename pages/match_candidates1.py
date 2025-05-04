@@ -87,7 +87,7 @@ def comparar_cv_com_vaga(cv_analise, requisitos_vaga):
 
     return pontuacao
 
-def agente_top_candidatos(vaga, candidatos_ids, applicants, nivel_academico_minimo, top_k=5):
+def agente_top_candidatos(vaga, candidatos_ids, applicants, top_k=5):
     requisitos_tecnicos = vaga.get("perfil_vaga", {}).get("competencia_tecnicas_e_comportamentais", "") + " " + vaga.get("perfil_vaga", {}).get("principais_atividades", "")
     idioma_ingles_req = vaga.get("perfil_vaga", {}).get("nivel_ingles", "básico")
     idioma_espanhol_req = vaga.get("perfil_vaga", {}).get("nivel_espanhol", "básico")
@@ -101,10 +101,6 @@ def agente_top_candidatos(vaga, candidatos_ids, applicants, nivel_academico_mini
             continue
 
         formacao = candidato.get("formacao_e_idiomas", {})
-        nivel_academico = formacao.get("nivel_academico", "").strip()
-
-        if nivel_academico_to_int(nivel_academico) < nivel_academico_to_int(nivel_academico_minimo):
-            continue
 
         conhecimentos = " ".join(
             candidato.get("informacoes_profissionais", {}).get("conhecimentos_tecnicos", "").split(";")
@@ -147,7 +143,7 @@ def agente_top_candidatos(vaga, candidatos_ids, applicants, nivel_academico_mini
 # Streamlit App
 st.subheader("📂 Envie os arquivos JSON")
 file_applicants = st.file_uploader("Applicants.json", type="json")
-file_jobs = st.file_uploader("Jobs.json (vagas)", type="json")
+file_jobs = st.file_uploader("Vagas.json", type="json")
 file_prospects = st.file_uploader("Prospects.json", type="json")
 
 if file_applicants and file_jobs and file_prospects:
@@ -167,12 +163,6 @@ if file_applicants and file_jobs and file_prospects:
     vaga_codigo = nome_para_codigo[nome_selecionado]
     vaga = jobs[vaga_codigo]
 
-    nivel_academico_min = st.selectbox("Nível acadêmico mínimo exigido", [
-        "Ensino Fundamental", "Ensino Médio", "Ensino Técnico Completo",
-        "Ensino Superior Incompleto", "Ensino Superior Cursando",
-        "Ensino Superior Completo", "Pós-graduação", "MBA", "Mestrado", "Doutorado"
-    ])
-
     # Extrai os códigos dos candidatos da estrutura correta do prospects.json
     candidatos_ids = [
         c["codigo"] for c in prospects.get(vaga_codigo, {}).get("prospects", [])
@@ -184,7 +174,7 @@ if file_applicants and file_jobs and file_prospects:
     st.markdown(f"**🌍 Idiomas exigidos:** Inglês - {vaga['perfil_vaga'].get('nivel_ingles', 'Básico')} | Espanhol - {vaga['perfil_vaga'].get('nivel_espanhol', 'Básico')}")
 
     if st.button("🔎 Encontrar Top 5 Candidatos"):
-        top_candidatos = agente_top_candidatos(vaga, candidatos_ids, applicants, nivel_academico_min)
+        top_candidatos = agente_top_candidatos(vaga, candidatos_ids, applicants)
 
         if top_candidatos:
             st.subheader("🏆 Top 5 Candidatos")
