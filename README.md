@@ -1,24 +1,32 @@
-# Datathon_Streamlit
-Datathon Phase 5 | FIAP
-Streamlit application developed for Phase 5 at FIAP by Group 6 (Class 6DTAT).
+# Datathon Phase 5 | FIAP
 
-Group Members
-Daniel Bispo dos Santos - RM356863
-Lucia Maria Fraga Teixeira - RM357817
-Yury Jorge Luiz Phelippe Antony Barros - RM357915
-Running the Application
-Clone this repository and navigate into the project folder:
+Streamlit application developed for Phase 5 at FIAP by **Group 6 (Class 6DTAT)**.
 
-git clone https://github.com/LMTeixeira/Datathon_Streamlit.git
-cd FiapTechChallenge4
-Create and activate a virtual environment (recommended):
+## Group Members
+- **Daniel Bispo dos Santos** - RM356863
+- **Lucia Maria Fraga Teixeira** - RM357817
+- **Yury Jorge Luiz Phelippe Antony Barros** - RM357915
 
-python3 -m venv venv
-source venv/bin/activate  # macOS / Linux
-venv\Scripts\activate     # Windows
-Install dependencies:
+## Running the Application
+1. **Clone this repository and navigate into the project folder:**
+    ```bash
+    git clone https://github.com/LMTeixeira/Datathon_Streamlit.git
+    cd Datathon_Streamlit
+    ```
 
-pip install -r requirements.txt
-Run the application:
+2. **Create and activate a virtual environment (recommended):**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate  # macOS / Linux
+    venv\Scripts\activate     # Windows
+    ```
 
-streamlit run "Datathon_Streamlit/Datathon.py"
+3. **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Run the application:**
+    ```bash
+    streamlit run "Datathon_Streamlit/Datathon.py"
+    ```
