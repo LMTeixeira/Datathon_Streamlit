@@ -17,3 +17,8 @@ icon = "📈"
 path = "pages/match_candidates1.py"
 name = "Agente IA de Seleção de Candidatos"
 icon = "🔍"
+
+[[pages]]
+path = "pages/challenges.py"
+name = "Desafios e oportunidade de melhoria"
+icon = "🔍"
