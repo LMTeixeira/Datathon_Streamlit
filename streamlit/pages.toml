@@ -14,7 +14,7 @@ name = "Solução Proposta"
 icon = "📈"
 
 [[pages]]
-path = "pages/match_candidates1.py"
+path = "pages/match_candidates2.py"
 name = "Agente IA de Seleção de Candidatos"
 icon = "🔍"
 
