@@ -135,7 +135,7 @@ def agente_top_candidatos(vaga, candidatos_ids, applicants, top_k=5):
     resultados = []
     for i, cand in enumerate(candidatos_info):
         match_idiomas = cand["ingles_ok"] and cand["espanhol_ok"]
-        score = similaridades[i] + (0.1 if match_idiomas else 0) + (cand["cv_score"] * 0.2)
+        score = similaridades[i] + (0.1 if match_idiomas else 0) + (cand["cv_score"] * 0.4)
         resultados.append((cand["nome"], cand["id"], round(score, 4)))
 
     return sorted(resultados, key=lambda x: x[2], reverse=True)[:top_k]
@@ -179,6 +179,6 @@ if file_applicants and file_jobs and file_prospects:
         if top_candidatos:
             st.subheader("🏆 Top 5 Candidatos")
             for nome, cid, score in top_candidatos:
-                st.markdown(f"**{nome}** (ID {cid}) — Score: `{score:.2%}`")
+                st.markdown(f"**{nome}** (ID {cid}) — Score: `{score}`")
         else:
             st.warning("Nenhum candidato atende aos critérios da vaga.")
