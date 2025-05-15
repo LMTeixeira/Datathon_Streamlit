@@ -135,7 +135,7 @@ def agente_top_candidatos(vaga, candidatos_ids, applicants, top_k=5):
     resultados = []
     for i, cand in enumerate(candidatos_info):
         match_idiomas = cand["ingles_ok"] and cand["espanhol_ok"]
-        score = similaridades[i] + (0.2 if match_idiomas else 0) + (cand["cv_score"] * 0.5)
+        score = similaridades[i] + (0.1 if match_idiomas else 0) + (cand["cv_score"] * 0.2)
         resultados.append((cand["nome"], cand["id"], round(score, 4)))
 
     return sorted(resultados, key=lambda x: x[2], reverse=True)[:top_k]
